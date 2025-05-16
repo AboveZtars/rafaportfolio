@@ -1,0 +1,21 @@
+{
+  "name": "hackathon-portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio entry for the hackathon",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@heroui/react": "2.7.8",
+    "@heroui/use-theme": "2.1.6",
+    "@iconify/react": "^6.0.0",
+    "framer-motion": "^11.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "source-map-js": "^1.2.1"
+  }
+}
