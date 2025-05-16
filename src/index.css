@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #121212;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #f97316;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.variable-font {
+  font-family: 'Recursive', sans-serif;
+  font-optical-sizing: auto;
+  transition: all 0.1s ease-out;
+  font-variation-settings: 'wght' 100;
+}
+
+.section {
+  scroll-margin-top: 4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Ensure initial scroll position is at the top */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  /* Force initial scroll position to top */
+  overflow-anchor: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Add styles for vertical skill bars */
+.skill-bar-vertical {
+  transition: height 1s ease;
+}
+
+/* Additional styles for draggable projects */
+.project-card {
+  touch-action: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  will-change: transform; /* Hint browser to optimize transform changes */
+  contain: layout paint; /* Improve rendering performance */
+}
+
+/* Override default position: revert that would break the grid */
+div[role="listbox"] > div[role="option"] {
+  position: relative !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  transition: all 0.2s ease; /* Speed up position transitions */
+}
+
+/* Only apply absolute positioning during drag with optimized transform */
+div[role="listbox"] > div[role="option"][data-framer-motion-drag="true"] {
+  position: absolute !important;
+  transform: translate3d(0, 0, 0) !important; /* Force GPU acceleration */
+}
+
+/* Custom grab cursors for better UX */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing !important;
+}
+
+/* Ensure the drag handle is visible on touch devices */
+@media (hover: none) {
+  .project-card .drag-indicator {
+    opacity: 0.7;
+  }
+}
