@@ -12,7 +12,8 @@ interface Project {
   description: string;
   image: string;
   technologies: string[];
-  githubLink: string;
+  link?: string;
+  githubLink?: string;
   demoLink?: string;
 }
 
@@ -21,32 +22,38 @@ const ProjectsPage: React.FC = () => {
   const [projects, setProjects] = React.useState<Project[]>([
     {
       id: 1,
-      title: "E-commerce API",
+      title: "WinkGPT",
       description:
-        "A high-performance RESTful API for an e-commerce platform with user authentication, product management, and order processing.",
-      image: "https://img.heroui.chat/image/ai?w=800&h=500&u=1",
-      technologies: ["Node.js", "Express", "MongoDB", "Redis"],
-      githubLink: "#",
-      demoLink: "#",
+        "A Chatbot to order any kind of products from any store, made in Whatsapp.",
+      image: "/projects/winkgpt2.png",
+      technologies: [
+        "BunJS",
+        "Whatsapp",
+        "Postgres",
+        "Redis",
+        "Langchain",
+        "OpenAI",
+        "DigitalOcean",
+      ],
+      link: "https://www.instagram.com/wink.vzla/",
     },
     {
       id: 2,
-      title: "Data Processing Pipeline",
+      title: "Yuri AI",
       description:
-        "A scalable data processing pipeline that handles real-time data ingestion, transformation, and analysis.",
-      image: "https://img.heroui.chat/image/ai?w=800&h=500&u=2",
-      technologies: ["Python", "Kafka", "Spark", "AWS"],
-      githubLink: "#",
+        "A simple chatbot to help you request a ride from Yummy Rides in Venezuela and ask questions about yummy rides. Build specifically to be used in Whatsapp.",
+      image: "/projects/yummyyuri.png",
+      technologies: ["NodeJS", "MomentoCache", "Whatsapp", "StackAi", "OpenAI"],
+      link: "https://api.whatsapp.com/send?phone=584241905742",
     },
     {
       id: 3,
-      title: "Microservices Architecture",
+      title: "RutasVe",
       description:
-        "A robust microservices architecture for a fintech application with service discovery, load balancing, and fault tolerance.",
-      image: "https://img.heroui.chat/image/ai?w=800&h=500&u=3",
-      technologies: ["Go", "Docker", "Kubernetes", "gRPC"],
-      githubLink: "#",
-      demoLink: "#",
+        "An App to help you find the best routes to travel in Venezuela using the public transport system.",
+      image: "/projects/map.png",
+      technologies: ["NodeJS", "React", "TailwindCSS", "NestJS", "Postgres"],
+      link: "https://routefinder-venezuela.lovable.app/services",
     },
   ]);
 
@@ -195,17 +202,32 @@ const ProjectsPage: React.FC = () => {
               </CardBody>
 
               <CardFooter className="flex justify-between gap-2">
-                <Button
-                  variant="flat"
-                  color="primary"
-                  startContent={<Icon icon="lucide:github" />}
-                  as="a"
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Code
-                </Button>
+                {project.githubLink && (
+                  <Button
+                    variant="flat"
+                    color="primary"
+                    startContent={<Icon icon="lucide:github" />}
+                    as="a"
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Code
+                  </Button>
+                )}
+                {project.link && (
+                  <Button
+                    variant="flat"
+                    color="primary"
+                    as="a"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    endContent={<Icon icon="lucide:external-link" />}
+                  >
+                    More Info
+                  </Button>
+                )}
 
                 {project.demoLink && (
                   <Button

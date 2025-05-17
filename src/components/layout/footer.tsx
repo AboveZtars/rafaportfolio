@@ -13,8 +13,10 @@ const Footer: React.FC = () => {
         <div className="flex space-x-6">
           <Tooltip content="LinkedIn" placement="top">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/rafael-molina-6649ab66/"
               className="text-foreground-500 hover:text-primary transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon icon="lucide:linkedin" width={20} height={20} />
             </a>
@@ -22,8 +24,10 @@ const Footer: React.FC = () => {
 
           <Tooltip content="GitHub" placement="top">
             <a
-              href="#"
+              href="https://github.com/AboveZtars"
               className="text-foreground-500 hover:text-primary transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon icon="lucide:github" width={20} height={20} />
             </a>
@@ -31,8 +35,10 @@ const Footer: React.FC = () => {
 
           <Tooltip content="X / Twitter" placement="top">
             <a
-              href="#"
+              href="https://x.com/spoonkycat"
               className="text-foreground-500 hover:text-primary transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon icon="lucide:twitter" width={20} height={20} />
             </a>
@@ -40,7 +46,7 @@ const Footer: React.FC = () => {
 
           <Tooltip content="Email" placement="top">
             <a
-              href="#"
+              href="mailto:rafael@molina-aquino.com"
               className="text-foreground-500 hover:text-primary transition-colors"
             >
               <Icon icon="lucide:mail" width={20} height={20} />

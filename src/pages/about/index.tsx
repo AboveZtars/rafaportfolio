@@ -72,7 +72,7 @@ const AboutPage: React.FC = () => {
               {/* Left column: Profile information */}
               <div className="flex flex-col items-center justify-center md:self-center text-center md:w-1/3">
                 <Avatar
-                  src="https://img.heroui.chat/image/avatar?w=200&h=200&u=42"
+                  src="/images/Perfil.jpeg"
                   alt="Rafael Molina"
                   className="w-28 h-28 text-large mb-4"
                   isBordered
