@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { motion, ValueAnimationTransition } from "framer-motion";
+import {useEffect, useRef} from "react";
+import {motion, ValueAnimationTransition} from "framer-motion";
 
 interface UnderlineProps {
   label: string;
@@ -15,7 +15,7 @@ const UnderlineToBackground = ({
   label,
   className,
   onClick,
-  transition = { type: "spring", damping: 30, stiffness: 300 },
+  transition = {type: "spring", damping: 30, stiffness: 300},
   underlineHeightRatio = 0.1, // Default to 10% of font size
   underlinePaddingRatio = 0.01, // Default to 1% of font size
   targetTextColor = "#fef",

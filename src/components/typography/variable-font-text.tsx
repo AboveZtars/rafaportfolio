@@ -1,6 +1,6 @@
-import React, { useCallback, useRef } from "react";
-import { motion, useAnimationFrame } from "framer-motion";
-import { useMousePositionRef } from "../../hooks/use-mouse-position-ref";
+import React, {useCallback, useRef} from "react";
+import {motion, useAnimationFrame} from "framer-motion";
+import {useMousePositionRef} from "../../hooks/use-mouse-position-ref";
 
 interface FontVariationAxis {
   name: string;

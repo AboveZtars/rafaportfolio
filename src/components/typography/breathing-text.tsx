@@ -1,5 +1,4 @@
-import React from "react";
-import { motion, Transition, Variants } from "framer-motion";
+import {motion, Transition, Variants} from "framer-motion";
 
 interface TextProps {
   label: string;
@@ -29,7 +28,7 @@ const BreathingText = ({
   ...props
 }: TextProps) => {
   const letterVariants: Variants = {
-    initial: { fontVariationSettings: fromFontVariationSettings },
+    initial: {fontVariationSettings: fromFontVariationSettings},
     animate: (i) => ({
       fontVariationSettings: toFontVariationSettings,
       transition: {

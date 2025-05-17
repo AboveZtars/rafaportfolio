@@ -5,7 +5,6 @@ import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import ChatbotPage from "./pages/chatbot";
-import { motion } from "framer-motion";
 
 function App() {
   // Add useEffect to scroll to top on initial load
@@ -31,6 +30,13 @@ function App() {
             <ChatbotPage />
           </section>
         </main>
+        <div className="flex justify-center relative z-20">
+          <img
+            src="/images/cat.gif"
+            alt="Cat"
+            className="h-32 w-auto -mb-12 z-20"
+          />
+        </div>
         <Footer />
       </div>
     </div>

@@ -1,16 +1,14 @@
-"use client"
-
-import React, { useState } from "react"
-import { motion, useAnimate } from "framer-motion"
+import {useState} from "react";
+import {motion, useAnimate} from "framer-motion";
 
 interface TextProps {
-  label: string
-  reverse?: boolean
-  transition?: any
-  staggerDuration?: number
-  staggerFrom?: "first" | "last" | "center" | number
-  className?: string
-  onClick?: () => void
+  label: string;
+  reverse?: boolean;
+  transition?: any;
+  staggerDuration?: number;
+  staggerFrom?: "first" | "last" | "center" | number;
+  className?: string;
+  onClick?: () => void;
 }
 
 const LetterSwapForward = ({
@@ -26,23 +24,23 @@ const LetterSwapForward = ({
   onClick,
   ...props
 }: TextProps) => {
-  const [scope, animate] = useAnimate()
-  const [blocked, setBlocked] = useState(false)
+  const [scope, animate] = useAnimate();
+  const [blocked, setBlocked] = useState(false);
 
   const hoverStart = () => {
-    if (blocked) return
+    if (blocked) return;
 
-    setBlocked(true)
+    setBlocked(true);
 
     // Function to merge user transition with stagger and delay
     const mergeTransition = (baseTransition: any) => ({
       ...baseTransition,
       delay: calculateStaggerDelay(label.length, staggerFrom, staggerDuration),
-    })
+    });
 
     animate(
       ".letter",
-      { y: reverse ? "100%" : "-100%" },
+      {y: reverse ? "100%" : "-100%"},
       mergeTransition(transition)
     ).then(() => {
       animate(
@@ -54,9 +52,9 @@ const LetterSwapForward = ({
           duration: 0,
         }
       ).then(() => {
-        setBlocked(false)
-      })
-    })
+        setBlocked(false);
+      });
+    });
 
     animate(
       ".letter-secondary",
@@ -73,14 +71,14 @@ const LetterSwapForward = ({
         {
           duration: 0,
         }
-      )
-    })
-  }
+      );
+    });
+  };
 
   // Helper function to calculate stagger delays
   const calculateStaggerDelay = (
-    length: number, 
-    from: "first" | "last" | "center" | number, 
+    length: number,
+    from: "first" | "last" | "center" | number,
     duration: number
   ) => {
     return (i: number) => {
@@ -114,20 +112,20 @@ const LetterSwapForward = ({
             key={i}
             aria-hidden={true}
           >
-            <motion.span className={`relative letter`} style={{ top: 0 }}>
+            <motion.span className={`relative letter`} style={{top: 0}}>
               {letter}
             </motion.span>
             <motion.span
               className="absolute letter-secondary"
-              style={{ top: reverse ? "-100%" : "100%" }}
+              style={{top: reverse ? "-100%" : "100%"}}
             >
               {letter}
             </motion.span>
           </span>
-        )
+        );
       })}
     </span>
-  )
-}
+  );
+};
 
-export default LetterSwapForward
+export default LetterSwapForward;
